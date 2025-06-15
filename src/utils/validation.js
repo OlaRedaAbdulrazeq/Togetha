@@ -43,7 +43,6 @@ export const validateProfileInfo = (data) => {
   let { firstName, lastName, bio, avatar } = data;
 
    const nameRegex = /^[A-Za-z]+$/;
-  // First Name
   firstName = firstName?.trim();
   if (firstName.length < 2) {
     errors.firstName = "First name must be at least 2 characters";
@@ -51,7 +50,6 @@ export const validateProfileInfo = (data) => {
     errors.firstName = "First name must contain only letters";
   }
 
-  // Last Name
   const lastnameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
   lastName = lastName?.trim();
   if (lastName.length < 2) {
@@ -60,12 +58,10 @@ export const validateProfileInfo = (data) => {
     errors.lastName = "Last name must contain only letters";
   }
 
-  // Bio (optional)
   if (bio && bio.length > 160) {
     errors.bio = "Bio must be 160 characters or less";
   }
 
-  // Avatar (optional, only validate if selected)
   if (avatar && avatar.type && !avatar.type.startsWith("image/")) {
     errors.avatar = "Only image files are allowed";
   }
@@ -89,7 +85,6 @@ export function validateLoginInfo({ email, password }) {
   return errors;
 }
 
-// utils/validation.js
 
 export function validatePostInfo({ title, description, images }, singleField = false) {
   const errors = {};

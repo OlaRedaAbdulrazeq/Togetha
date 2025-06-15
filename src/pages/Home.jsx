@@ -89,7 +89,6 @@ const confirmDelete = async () => {
    
       <div className="w-full md:w-[65%] lg:w-[75%] flex flex-col items-center md:items-start pt-8 px-6 border-r border-gray-300">
         {posts.map((post) => (
-          // <Post key={post._id} post={post} onDelete={handleDelete} onUpdate={handleUpdate} />
           <Post key={post._id} post={post} onDelete={() => handlePostDelete(post._id)} />
 
         ))}

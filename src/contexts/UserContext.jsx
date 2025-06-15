@@ -22,7 +22,6 @@ export const UserProvider = ({ children }) => {
           localStorage.setItem("user", JSON.stringify(fullUser)); // ensure sync
         })
         .catch(() => {
-          // Token invalid — clean up
           setToken(null);
           setUser(null);
           localStorage.removeItem("token");

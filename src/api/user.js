@@ -1,6 +1,5 @@
 import api from './axios';
 
-//Register User
 export const registerUser = (formData) => {
   return api.post('/auth/register', formData, {
     headers: {
@@ -9,13 +8,13 @@ export const registerUser = (formData) => {
   }).then(res => res.data);
 };
 
-// api/user.js
+
 export const loginUser = async (credentials) => {
-  const res = await api.post("/auth/login", credentials); // Adjust path as needed
+  const res = await api.post("/auth/login", credentials); 
   return res.data;
 };
 
-// Update User Profile
+
 export const editUserProfile = (formData, token) => {
   return api.put('/users/profile', formData, {
     headers: {
@@ -25,7 +24,7 @@ export const editUserProfile = (formData, token) => {
   }).then(res => res.data);
 };
 
-// api/user.js
+
 export const getProfile = (token) => {
   return api
     .get('/users/profile', {

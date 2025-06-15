@@ -22,7 +22,7 @@ export const updatePost = async (postId, formData, token) => {
     const res = await api.put(`/posts/${postId}`, formData, {
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json', // or multipart/form-data if needed
+        'Content-Type': 'application/json',
       },
     });
     return res.data;
@@ -41,7 +41,7 @@ export const deletePost = async (postId, token) => {
         Authorization: `Bearer ${token}`
       }
     });
-    return res.data; // optional, if backend returns a success message or deleted post
+    return res.data;
   } catch (err) {
     throw new Error(err.response?.data?.message || "Failed to delete post");
   }

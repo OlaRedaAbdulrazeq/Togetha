@@ -12,7 +12,7 @@ export const PostsProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const loadPosts = async () => {
-    if (loading || !hasMore) return; // prevent race
+    if (loading || !hasMore) return; 
     setLoading(true);
     try {
       const newPosts = await getPosts(page);
@@ -70,7 +70,7 @@ const fetchPosts = async () => {
   };
 
   useEffect(() => {
-    fetchPosts(); // Load posts on mount
+    fetchPosts(); 
   }, []);
   return (
     <PostsContext.Provider

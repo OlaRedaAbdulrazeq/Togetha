@@ -6,7 +6,7 @@ import CustomButton from '../components/CustomButton';
 import { FaUnlockKeyhole } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { useSignup } from '../contexts/SignupContext';
-import { checkUserAvailability } from '../api/checkUser'; // ✅ Import the API function
+import { checkUserAvailability } from '../api/checkUser';
 import { validateSignup } from '../utils/validation';
 import { toast } from 'react-toastify';
 import { registerUser } from '../api/user';
@@ -19,7 +19,6 @@ const Signup = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignupData((prev) => ({ ...prev, [name]: value }));
-    // Validate current field
   const fieldError = validateSignup({ ...signupData, [name]: value }, true)[name];
   setFormErrors((prevErrors) => ({...prevErrors,[name]: fieldError || "",
   }));
@@ -37,8 +36,7 @@ const Signup = () => {
     const toastId = toast.loading("Creating your account...");
     try {
        const { username, email, password } = signupData;
-      //  const response = await registerUser({ username, email, password });
-
+    
       await checkUserAvailability({ username, email });
       await registerUser({ username, email, password });
       toast.update(toastId, {

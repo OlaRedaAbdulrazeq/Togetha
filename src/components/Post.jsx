@@ -48,7 +48,7 @@ const handleDelete = () => {
 };const confirmDelete = async () => {
   try {
     await deletePostFromAPI(post._id, user.token);
-    deletePostById(post._id); // Update UI
+    deletePostById(post._id); 
     toast.success("Post deleted Successfully");
   } catch (err) {
     console.error("Delete failed:", err);
@@ -59,7 +59,7 @@ const handleDelete = () => {
 };
 
 const cancelDelete = () => {
-  setShowConfirm(false); // Just close modal
+  setShowConfirm(false);
 };
 
   return (

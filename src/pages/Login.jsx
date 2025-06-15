@@ -24,7 +24,6 @@ import { validateLoginInfo } from '../utils/validation';
     setForm((prevForm) => {
       const updatedForm = { ...prevForm, [name]: value };
 
-      // Validate only email in real-time
       if (name === 'email') {
         const { email: emailError } = validateLoginInfo(updatedForm);
         setErrors((prevErrors) => ({ ...prevErrors, email: emailError }));
@@ -82,7 +81,6 @@ import { validateLoginInfo } from '../utils/validation';
                  icon={<MdEmail className="w-5 h-5 text-gray-400" />} 
                  errorMessage={errors.email}
                  /> 
-              {/* {handle error messages by passing it as a prop and handle its validation in the InputField as well by implementing a flag of error} */}
               <Inputfield 
                   type="password" 
                   label="PASSWORD" 

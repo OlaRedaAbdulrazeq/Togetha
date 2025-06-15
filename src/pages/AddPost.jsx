@@ -98,8 +98,8 @@ try {
         await fetchPosts();
         
       } catch (err) {
-        // rollback
-        deletePostById(tempId); // Remove temporary post
+        
+        deletePostById(tempId);
         toast.error("Something went Wrong , Can't upload Post");
         console.log(err)
       }
