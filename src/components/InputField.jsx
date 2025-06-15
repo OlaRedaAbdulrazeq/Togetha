@@ -14,6 +14,7 @@ const Inputfield = ({label,placeholder,type,icon,onChange,value,name,errorMessag
                  value={value}
                  name={name}
                />
+               {/*  */}
                {icon}
              </div>
            </fieldset>

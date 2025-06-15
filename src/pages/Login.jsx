@@ -95,7 +95,7 @@ import { validateLoginInfo } from '../utils/validation';
                {serverError && <p className="text-red-500 text-sm mb-4">{serverError}</p>}
               <CustomButton onClick={handleSubmit} disabled={isLoading} > {isLoading ? 'LOGGING IN...' : 'LOGIN'}</CustomButton>
               <CustomButton bgColor="white" onClick={()=>navigate('/register')}>CREATE AN ACCOUNT</CustomButton>
-
+ {/* / */}
           </div>
       </div>
     )
